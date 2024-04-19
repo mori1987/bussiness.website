@@ -1,0 +1,222 @@
+{% load static %}
+    <!-- Start Header Top 
+    ============================================= -->
+    <div class="top-bar-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 logo">
+                    <a href="index.html">
+                        <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <div class="col-md-9 address-info text-right">
+                    <div class="info box">
+                        <ul>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-email"></i>
+                                </div>
+                                <div class="info">
+                                    <span>Email</span> Morteza.Biouki@gmail.com
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-call-center"></i>
+                                </div>
+                                <div class="info">
+                                    <span>Phone</span> 09362658960
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="flaticon-countdown"></i>
+                                </div>
+                                <div class="info">
+                                    <span>Office Hours</span> Sat - Wed : 8:00 - 4:00
+                                </div> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Header Top -->
+
+    <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border active-border logo-less small-pad navbar-sticky bootsnav">
+
+            <!-- Start Top Search -->
+            <div class="top-search">
+                <div class="container">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
+            <div class="container">
+
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
+                        <li class="side-menu"><a href="#"><i class="fas fa-bars"></i></a></li>
+                    </ul>
+                </div>        
+                <!-- End Atribute Navigation -->
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/logo.png" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-left" data-in="#" data-out="#">
+                        <li class="dropdown">
+                            <a href="{% url 'home:home' %}" class="dropdown-toggle active" data-toggle="dropdown" >Home</a>
+                           
+                       
+                        
+                        </li>
+                        <li class="dropdown megamenu-fw">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <ul class="dropdown-menu megamenu-content" role="menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Banner</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="banner-5.html">Banner Single Image</a></li>
+                                                </ul>
+                                            </div>
+                                        </div><!-- end col-3 -->
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Footer</h6>
+                                            <div class="content">
+                                            
+                                            </div>
+                                        </div><!-- end col-3 -->
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Other Pages</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="{% url 'pages:about-us' %}">About us</a></li>
+                                                    <li><a href="{% url 'pages:contact' %}">Contact</a></li>
+                                                    <li><a href="pricing-table.html">Pricing Table</a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div><!-- end col-3 -->
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Additional Pages</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    {% if user.is_authenticated %}
+                                                    <form method="post" action="{% url 'logout' %}">
+                                                    {% csrf_token %}
+                                                    <button type="submit">logout</button>
+                                                </form>
+                                                    {% else %}
+                                                    <li><a href="{% url 'login' %}">login</a></li>
+                                                    <li><a href="{% url 'accounts:signup' %}">register</a></li>
+                                                    {% endif %}
+                                                </ul>
+                                            </div>
+                                        </div><!-- end col-3 -->
+                                    </div><!-- end row -->
+                                </li>
+                            </ul>
+                        </li>
+                      
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="services.html">Services Version One</a></li>
+                        
+                            </ul>
+                        </li>
+                        <li><a href="team.html">Team</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-standard.html">Blog Standard</a></li>
+                              
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{% url 'pages:contact' %}">contact</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+            <!-- Start Side Menu -->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fas fa-times"></i></a>
+                <div class="widget">
+                    <img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+                    <p>
+                        Arrived compass prepare an on as. Reasonable particular on my it in sympathize. Size now easy eat hand how. Unwilling he departure elsewhere dejection at. Heart large seems may purse means few blind.
+                    </p>
+                </div>
+                <div class="widget contact address">
+                    <div>
+                        <ul>
+                            <li>
+                                <div class="content"><p>ADDRESS</p><strong>California, TX 70240</strong></div>
+                            </li>
+                            <li>
+                                <div class="content"><p>EMAIL</p><strong>morteza.biouki@gmail.com</strong></div>
+                            </li>
+                            <li>
+                                <div class="content"><p>PHONE</p><strong>09362658960</strong></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget contact newsletter">
+                    <h4 class="title">Get Subscribed!</h4>
+                    <form action="#">
+                        <div class="input-group stylish-input-group">
+                            <input type="email" placeholder="Enter your e-mail" class="form-control" name="email">
+                            <span class="input-group-addon">
+                                <button type="submit">
+                                    <i class="fas fa-long-arrow-alt-right"></i>
+                                </button>  
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="widget social">
+                    <ul class="link">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Side Menu -->
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->

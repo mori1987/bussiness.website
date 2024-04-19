@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+    <!-- Start Page Title 
+    ============================================= -->
+    <div class="page-title-area shadow dark bg-fixed text-center text-light" style="background-image: url(assets/img/2440x1578.png);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <h1>Contact Us</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title -->
+
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+
+    <!-- Start Contact Area
+    ============================================= -->
+    <div class="contact-area default-padding-top bottom-half">
+        <div class="container">
+            <div class="contact-items">
+                <div class="row">
+                    <div class="col-md-6 address">
+                        <div class="address-items text-center text-light" style="background-image: url(assets/img/800x800.png);">
+                            <ul class="info">
+                                <li>
+                                    <div class="icon"><i class="flaticon-location"></i></div> 
+                                    <h4>Office Location</h4>
+                                    <span>22 Baker Street,<br> London, United Kingdom,<br> W1U 3BW</span>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="flaticon-call-center"></i></div>
+                                    <h4>Phone</h4>
+                                    <span>+44-20-7328-4499 <br>+99-34-8878-9989</span>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="flaticon-email"></i> </div>
+                                    <h4>Email</h4>
+                                    <span>info@yourdomain.com<br>admin@yourdomain.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-box">
+                        <h2>Let's lalk about your idea</h2>
+                        <p>
+                            Our next drew much you with rank. Tore many held age hold rose than our. She literature sentiments any contrasted. Set aware joy sense young now tears china shy. 
+                        </p>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{form.as_p}}
+                           <button type="submit">message send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Contact Area -->
+
+    <!-- Star Google Maps
+    ============================================= -->
+    <div class="maps-area">
+        <div class="container-full">
+            <div class="row">
+                <div class="google-maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14767.262289338461!2d70.79414485000001!3d22.284975!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1424308883981"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Google Maps -->
+
+    <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark">
+        <div class="container">
+            <div class="footer-content default-padding">
+                <div class="row">
+
+                    <div class="equal-height col-md-4 col-sm-6 item">
+                        <div class="f-item about">
+                            <h4 class="widget-title">About</h4>
+                            <p>
+                                Required honoured trifling eat pleasure man relati Assurance yet bed was improving furniture man Distrusts delighted services and a high degre tobiscotuition end of imposition.
+                            </p>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="equal-height col-md-2 col-sm-6 item">
+                        <div class="f-item link">
+                            <h4 class="widget-title">Usefull Links</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">Classic Business</a>
+                                </li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="equal-height col-md-2 col-sm-6 item">
+                        <div class="f-item link">
+                            <h4 class="widget-title">Company</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#">Faq</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="equal-height col-md-4 col-sm-6 item">
+                        <div class="f-item contact address">
+                            <h4 class="widget-title">Contact Us</h4>
+                            <ul>
+                                <li>
+                                    <div class="icon"><i class="flaticon-location"></i></div>
+                                    <span>22 Baker Street, Koenigstrasse 65, Bad Sülze, Mecklenburg-Vorpommern, Philippines</span>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="flaticon-call-center"></i>
+                                    </div>
+                                    <span>+123 456 7890 <br>+456 123 4455  </span>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="flaticon-email"></i> </div>
+                                    <span>support@buscom.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyrigh &copy; 2021 Buscom, All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+</body>
+</html>
+{% endblock %}
