@@ -25,7 +25,7 @@
                                     <p data-animation="animated slideInLeft">
                                         Arrived Size now easy eat hand how. Unwilling he departure elsewhere dejection at. Heart large seems may purse means few blind.
                                     </p>
-                                    <a data-animation="animated slideInUp" class="btn circle  btn-light border btn-md" href="#">Our Services</a>
+                                    <a data-animation="animated slideInUp" class="btn circle  btn-light border btn-md" href="{% url 'pages:service' %}">Our Services</a>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                     </ul>
                 </div>
                 <div class="col-md-5 thumb">
-                    <img src="assets/img/800x800.png" alt="Thumb">
+                    <img src="{% static 'assets/img/800x800.png' %}" alt="Thumb">
                 </div>
             </div>
 
@@ -158,7 +158,7 @@
 
     <!-- Start Expertise Area
     ============================================= -->
-    <div class="expertise-area shape-theme default-padding bg-cover" style="background-image: url(assets/img/2440x1578.png);">
+    <div class="expertise-area shape-theme default-padding bg-cover" style="background-image: url({% static 'assets/img/2440x1578.png' %});">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-6 our-expertise text-light">
@@ -382,7 +382,7 @@
                     <div class="single-item col-md-3 col-sm-6">
                         <div class="item">
                             <div class="thumb">
-                                <img src="assets/img/800x850.png" alt="Thumb">
+                                <img src="{% static 'assets/img/800x850.png' %}" alt="Thumb">
                                 <ul class="social">
                                     <li class="facebook">
                                         <a href="#">
@@ -414,7 +414,7 @@
                     <div class="single-item col-md-3 col-sm-6">
                         <div class="item">
                             <div class="thumb">
-                                <img src="assets/img/800x850.png" alt="Thumb">
+                                <img src="{% static 'assets/img/800x850.png' %}" alt="Thumb">
                                 <ul class="social">
                                     <li class="facebook">
                                         <a href="#">
@@ -446,7 +446,7 @@
                     <div class="single-item col-md-3 col-sm-6">
                         <div class="item">
                             <div class="thumb">
-                                <img src="assets/img/800x850.png" alt="Thumb">
+                                <img src="{% static 'assets/img/800x850.png' %}" alt="Thumb">
                                 <ul class="social">
                                     <li class="facebook">
                                         <a href="#">
@@ -478,7 +478,7 @@
                     <div class="single-item col-md-3 col-sm-6">
                         <div class="item">
                             <div class="thumb">
-                                <img src="assets/img/800x850.png" alt="Thumb">
+                                <img src="{% static 'assets/img/800x850.png' %}" alt="Thumb">
                                 <ul class="social">
                                     <li class="facebook">
                                         <a href="#">
@@ -532,7 +532,7 @@
                         <div class="item">
                             <div class="thumb">
                                 <a href="#">
-                                    <img src="assets/img/800x600.png" alt="Thumb">
+                                    <img src="{% static 'assets/img/800x600.png' %}" alt="Thumb">
                                     <div class="post-date">
                                         {{last.date_created}}
                                     </div>
@@ -553,7 +553,7 @@
                             <div class="meta">
                                 <ul>
                                     <li>
-                                        <a href="#"> <img src="assets/img/100x100.png" alt="Author"> Author</a>
+                                        <a href="#"> <img src="{% static 'assets/img/100x100.png' %}" alt="Author"> Author</a>
                                     </li>
                                     <li>
                                         <a href="#"><i class="fas fa-comments"></i> 15 Comments</a>
@@ -577,7 +577,7 @@
             <div class="contact-items">
                 <div class="row">
                     <div class="col-md-6 address">
-                        <div class="address-items text-center text-light" style="background-image: url(assets/img/800x800.png);">
+                        <div class="address-items text-center text-light" style="background-image: url({% static 'assets/img/800x800.png' %});">
                             <ul class="info">
                                 <li>
                                     <div class="icon"><i class="flaticon-location"></i></div> 

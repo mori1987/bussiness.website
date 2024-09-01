@@ -8,13 +8,10 @@ from django.urls import reverse_lazy
 
 class HomeView(View):
     def get(self,request):
-        last_three_post= Blog.objects.order_by('date_created')[:3]
+        last_three_post = Blog.objects.order_by('date_created')[:3]
         return render(request,'home/index.html',{'last_three_post':last_three_post})
-        
     def post(self,request):
-        return render(request,'home/index.html')
-
-
+        return render(request, "home/index.html")
 
 
 class ContactHomeView(CreateView):
@@ -22,6 +19,3 @@ class ContactHomeView(CreateView):
     form_class = ContactCreationForm
     template_name= 'home/index.html'
     success_url=reverse_lazy('home:home')
-    
-    
-

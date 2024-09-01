@@ -18,3 +18,10 @@ class AboutView(generic.ListView):
     model= About_us
     template_name= 'pages/about-us.html'
     context_object_name= 'about'
+
+
+def services_view(request):
+    return render(request, 'pages/services.html')
+
+def team_view(request):
+    return render(request, 'pages/team.html')

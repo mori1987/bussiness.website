@@ -13,7 +13,7 @@
 
     <!-- Start Page Title 
     ============================================= -->
-    <div class="page-title-area shadow dark bg-fixed text-center text-light" style="background-image: url(assets/img/2440x1578.png);">
+    <div class="page-title-area shadow dark bg-fixed text-center text-light" style="background-image: url({% static 'assets/img/2440x1578.png' %});">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
@@ -50,11 +50,11 @@
                     <div class="blog-content col-md-10 col-md-offset-1">
                         <div class="blog-item-box">
                             <!-- Single Item -->
-                            {% for blog in blogs %}
+                        
                             <div class="single-item">
                                 <div class="item">
                                     <div class="thumb">
-                                       
+                                       {% for blog in blogs %}
                                         <a href="#">
                                             <img src="#" alt="Thumb">
                                             <div class="post-date">
@@ -68,12 +68,12 @@
                                             <a href="#">product</a>
                                         </div>
                                         <h4>
-                                            <a href="{{ Blog.get_absolute_url }}">{{blog.title}}</a>
+                                            <a href="{% url 'blog:blog_detail' blog.pk %}">{{blog.title}}</a>
                                         </h4>
                                         <p>
                                            {{blog.description}}
                                         </p>
-                                        <a class="btn btn-theme border btn-sm" href="{{ Blog.get_absolute_url }}">Read More <i class="fas fa-angle-double-right"></i></a>
+                                        <a class="btn btn-theme border btn-sm" href="{% url 'blog:blog_detail' blog.pk %}">Read More <i class="fas fa-angle-double-right"></i></a>
                                     </div>
                                     <div class="meta">
                                         <ul>
@@ -111,120 +111,6 @@
     </div>
     <!-- End Blog -->
 
-    <!-- Star Footer
-    ============================================= -->
-    <footer class="bg-dark">
-        <div class="container">
-            <div class="footer-content default-padding">
-                <div class="row">
-
-                    <div class="equal-height col-md-4 col-sm-6 item">
-                        <div class="f-item about">
-                            <h4 class="widget-title">About</h4>
-                            <p>
-                                Required honoured trifling eat pleasure man relati Assurance yet bed was improving furniture man Distrusts delighted services and a high degre tobiscotuition end of imposition.
-                            </p>
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="equal-height col-md-2 col-sm-6 item">
-                        <div class="f-item link">
-                            <h4 class="widget-title">Usefull Links</h4>
-                            <ul>
-                                <li>
-                                    <a href="#">Classic Business</a>
-                                </li>
-                                <li>
-                                    <a href="#">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="#">Gallery</a>
-                                </li>
-                                <li>
-                                    <a href="#">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Services</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="equal-height col-md-2 col-sm-6 item">
-                        <div class="f-item link">
-                            <h4 class="widget-title">Company</h4>
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact</a>
-                                </li>
-                                <li>
-                                    <a href="#">Gallery</a>
-                                </li>
-                                <li>
-                                    <a href="#">Faq</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="equal-height col-md-4 col-sm-6 item">
-                        <div class="f-item contact address">
-                            <h4 class="widget-title">Contact Us</h4>
-                            <ul>
-                                <li>
-                                    <div class="icon"><i class="flaticon-location"></i></div>
-                                    <span>22 Baker Street, Koenigstrasse 65, Bad Sülze, Mecklenburg-Vorpommern, Philippines</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="flaticon-call-center"></i>
-                                    </div>
-                                    <span>+123 456 7890 <br>+456 123 4455  </span>
-                                </li>
-                                <li>
-                                    <div class="icon"><i class="flaticon-email"></i> </div>
-                                    <span>support@buscom.com</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- Footer Bottom -->
-        <div class="footer-bottom text-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>Copyrigh &copy; 2021 Buscom, All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Footer Bottom -->
-    </footer>
-    <!-- End Footer-->
 </body>
 </html>
 {% endblock %}

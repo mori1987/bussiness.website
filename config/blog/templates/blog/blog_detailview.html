@@ -7,7 +7,7 @@
 
     <!-- Start Page Title 
     ============================================= -->
-    <div class="page-title-area shadow dark bg-fixed text-center text-light" style="background-image: url(assets/img/2440x1578.png);">
+    <div class="page-title-area shadow dark bg-fixed text-center text-light" style="background-image: url({% static 'assets/img/2440x1578.png' %});">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
@@ -43,12 +43,11 @@
                 <div class="blog-items">
                     <div class="blog-content col-md-10 col-md-offset-1">
                         <div class="item">
-                        
                             <div class="blog-item-box">
                                 <!-- Start Post Thumb -->
                                 <div class="thumb">
                                     <a href="{{ Blog.get_absolute_url }}">
-                                        <img src="assets/img/1500x700.png" alt="Thumb">
+                                        <img src="{% static 'assets/img/1500x700.png' %}" alt="Thumb">
                                         <div class="post-date">
                                             {{blog.date_created}}
                                         </div>
@@ -83,23 +82,19 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        {% for comment in blog.comments.all %}
+                    {% for comment in blog.comments.all %}
                         <!-- Start Blog Comment -->
                         <div class="blog-comments">
                             <div class="comments-area">
                                 <div class="comments-title">
-                                    <h4>
-                                        5 comments
-                                    </h4>
                                     <div class="comments-list">
                                         <div class="commen-item">
                                             <div class="avatar">
-                                                <img src="assets/img/800x800.png" alt="Author">
+                                                <img src="{% static 'assets/img/800x800.png' %}" alt="Author">
                                             </div>
                                             <div class="content">
                                                 <div class="title">
-                                                    <h5>{{comment.author.username}}</h5>
+                                                    <h5>{{comment.user.username}}</h5>
                                                     <span>{{comment.date_created}}</span>
                                                 </div>
                                                 <p>
@@ -111,7 +106,7 @@
                                         </div>
                                         <div class="commen-item reply">
                                             <div class="avatar">
-                                                <img src="assets/img/800x800.png" alt="Author">
+                                                <img src="{% static 'assets/img/800x800.png' %}" alt="Author">
                                             </div>
                                             <div class="content">
                                                 <div class="title">
@@ -128,43 +123,22 @@
                                         </div>
                                     </div>
                                 </div>
+                                {% endfor %}
                                 <div class="comments-form">
                                     <div class="title">
                                         <h4>Leave a comments</h4>
                                     </div>
-                                    <form action="#" class="contact-comments">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <!-- Name -->
-                                                    <input name="name" class="form-control" placeholder="Name *" type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <!-- Email -->
-                                                    <input name="email" class="form-control" placeholder="Email *" type="email">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group comments">
-                                                    <!-- Comment -->
-                                                    <textarea class="form-control" placeholder="Comment"></textarea>
-                                                </div>
-                                                <div class="form-group full-width submit">
-                                                    <button type="submit">
-                                                        Post Comments
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <form action="{% url 'blog:comment_create' blog.id %}" method="post">
+                                        {% csrf_token %}
+                                        {{commentform.as_p}}
+                                        <input type="submit" value="send">                                    
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <!-- End Comments Form -->
-                        {% endfor %}
-
+                    
+                    
                     </div>
                 </div>
             </div>
